@@ -1,0 +1,236 @@
+/* Estilos generales */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 700px;
+}
+
+h1 {
+    color: #4a5568;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* Formulario */
+.form-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #718096;
+    transition: color 0.3s ease;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+input[type="tel"] {
+    padding: 18px;
+    /* Reducir el padding */
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #2d3748;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: #a3b18a;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(163, 177, 138, 0.25);
+}
+
+/* Estilos para radio buttons (Tipo) - Mejorados */
+.tipo-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.tipo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background-color: #f7fafc;
+    width: calc(33.33% - 20px);
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.tipo-card label {
+    font-weight: 600;
+    color: #718096;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.tipo-card input[type="radio"] {
+    display: none;
+}
+
+.tipo-card:hover {
+    border-color: #a3b18a;
+    background-color: #edf2f7;
+}
+
+.tipo-card:hover label {
+    color: #a3b18a;
+}
+
+/* Estilos para radio buttons (Tipo) - Seleccionado */
+.tipo-card input[type="radio"]:checked+label {
+    color: #588157;
+}
+
+.tipo-card.selected {
+    border-color: #588157;
+    background-color: #d0e0d0;
+}
+
+.tipo-card.selected label {
+    color: #588157;
+}
+
+/* Botón */
+button[type="submit"] {
+    background-color: #a3b18a;
+    color: #fff;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #588157;
+}
+
+/* Estilos específicos para la fecha de nacimiento y la edad */
+.nacimiento-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.fecha-edad-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#edad {
+    font-style: italic;
+    color: #718096;
+}
+
+/* Estilos para pais y estado en la misma linea */
+.pais-estado-group {
+    display: flex;
+    gap: 25px;
+}
+
+.pais-estado-group .form-group {
+    width: 100%;
+}
+
+/* Media Queries para hacerlo responsivo */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 30px;
+        border-radius: 12px;
+    }
+
+    .pais-estado-group {
+        flex-direction: column;
+    }
+
+    /* Radio buttons en vertical para móviles */
+    .tipo-group {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .tipo-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .form-registro {
+        gap: 20px;
+    }
+
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 14px 24px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    input[type="email"],
+    input[type="tel"] {
+        font-size: 1rem;
+        padding: 14px;
+        /* Ajustar el padding */
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Participantes</title>
+    <!-- Fuente Nunito desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Hoja de estilos CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registro de Participante</h1>
+      <!-- Formulario de registro -->
+      <form action="#" method="POST" class="form-registro">
+        <!-- Campo Nombre -->
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <!-- Input para el nombre del participante -->
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+
+        <!-- Campo Fecha de Nacimiento -->
+        <div class="form-group nacimiento-group">
+          <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+          <div class="fecha-edad-container">
+            <!-- Input para la fecha de nacimiento -->
+            <input
+              type="date"
+              id="fecha_nacimiento"
+              name="fecha_nacimiento"
+              required
+            />
+            <!-- Span para mostrar la edad calculada -->
+            <span id="edad"></span>
+          </div>
+        </div>
+
+        <!-- Campo Tipo de Participante -->
+        <div class="form-group">
+          <label>Tipo:</label>
+          <!-- Contenedor para las tarjetas de tipo -->
+          <div class="tipo-group">
+            <!-- Tarjeta Estudiante -->
+            <div class="tipo-card">
+              <!-- Radio button para Estudiante -->
+              <input
+                type="radio"
+                id="estudiante"
+                name="tipo"
+                value="estudiante"
+                required
+              />
+              <!-- Label para Estudiante -->
+              <label for="estudiante">Estudiante</label>
+            </div>
+
+            <!-- Tarjeta Profesor -->
+            <div class="tipo-card">
+              <!-- Radio button para Profesor -->
+              <input
+                type="radio"
+                id="profesor"
+                name="tipo"
+                value="profesor"
+                required
+              />
+              <!-- Label para Profesor -->
+              <label for="profesor">Profesor</label>
+            </div>
+
+            <!-- Tarjeta Profesional -->
+            <div class="tipo-card">
+              <!-- Radio button para Profesional -->
+              <input
+                type="radio"
+                id="profesional"
+                name="tipo"
+                value="profesional"
+                required
+              />
+              <!-- Label para Profesional -->
+              <label for="profesional">Profesional</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campo País y Estado -->
+        <div class="form-group pais-estado-group">
+          <!-- Campo País -->
+          <div class="form-group">
+            <label for="pais">País:</label>
+            <!-- Input para el país -->
+            <input type="text" id="pais" name="pais" />
+          </div>
+
+          <!-- Campo Estado -->
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <!-- Input para el estado -->
+            <input type="text" id="estado" name="estado" />
+          </div>
+        </div>
+
+        <!-- Campo Email -->
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <!-- Input para el email -->
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <!-- Campo Teléfono -->
+        <div class="form-group">
+          <label for="telefono">Teléfono:</label>
+          <!-- Input para el teléfono -->
+          <input type="tel" id="telefono" name="telefono" />
+        </div>
+
+        <!-- Botón de Enviar -->
+        <button type="submit">Registrar</button>
+      </form>
+    </div>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+    <script>
+      // Para destacar la tarjeta seleccionada
+      const tipoCards = document.querySelectorAll(".tipo-card");
+
+      tipoCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Deseleccionar todas las tarjetas
+          tipoCards.forEach((c) => c.classList.remove("selected"));
+
+          // Seleccionar la tarjeta actual
+          card.classList.add("selected");
+        });
+      });
+    </script>
+  </body>
+</html>
